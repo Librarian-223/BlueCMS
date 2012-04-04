@@ -1,0 +1,22 @@
+Blog\Bundle\BlogBundle\Entity\Comentario:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    nombre:
+      type: string
+      length: 255
+    comentario:
+      type: string
+      length: 255
+    fecha:
+      type: datetime
+  manyToOne:
+    entrada:
+      targetEntity: Entrada
+      inversedBy: entradaid
+  lifecycleCallbacks: {  }

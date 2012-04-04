@@ -1,0 +1,3 @@
+BlueCMSBundle_homepage:
+    pattern:  /gestor
+    defaults: { _controller: BlueCMSBundle:Default:gestor }

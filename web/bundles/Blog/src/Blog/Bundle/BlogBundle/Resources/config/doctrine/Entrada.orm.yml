@@ -1,0 +1,22 @@
+Blog\Bundle\BlogBundle\Entity\Entrada:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    titulo:
+      type: string
+      length: 255
+    contenido:
+      type: string
+      length: 255
+    fecha:
+      type: datetime
+  oneToMany:
+    entradaid:
+      targetEntity: Comentario
+      mappedBy: entrada
+  lifecycleCallbacks: {  }

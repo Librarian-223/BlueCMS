@@ -1,0 +1,7 @@
+parameters:
+#    blue_cms.example.class: BlueCMS\Bundle\BlueCMSBundle\Example
+
+services:
+#    blue_cms.example:
+#        class: %blue_cms.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

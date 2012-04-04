@@ -1,0 +1,41 @@
+{% extends "BlogBlogBundle:Default:index.html.twig" %}
+
+{% block contenido %}
+    <div id="entry">
+        <div id="titulo"><h1>{{entrada.titulo}}</h1></div>
+        <div id="texto">{{entrada.contenido}}</div>
+        <br /><br /><p><b>Fecha: </b>{{ entrada.fecha |date("d/M/Y")}}</p>
+    </div>
+<h2>Comentarios:</h2>
+{% for comentario in comentarios %}
+        
+        <div id="comment">
+        <div id="titulo"><h1>{{comentario.nombre}}</h1></div>
+        <div id="texto">{{comentario.comentario}}</div>
+        <br /><br /><p><b>Fecha: </b>{{ comentario.fecha |date("d/M/Y")}}</p>
+        </div>
+    {% endfor %}
+
+<div id="formcomment">
+<form action="{{path('_welcome')}}crearcomentario" method="post">
+    <table>
+        <tr>
+            <td><label for="nombre">Nombre </label></td>
+            <td><input type="text" name="nombre" size="30" maxlength="80"></td>
+        </tr>
+        <tr>
+            <td><label for="email">Comentario : </label></td>
+            <td><textarea name="comentario" cols="40" rows="5"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="hidden" name="entrada" value="{{entrada.id}}">
+                <input type="hidden" name="anio" value="{{entrada.fecha |date("Y")}}">
+                <input type="hidden" name="mes" value="{{entrada.fecha |date("M")}}">
+                <input type="hidden" name="titulo" value="{{entrada.titulo}}">
+            </td>
+            <td><input type="submit" value="Enviar"></td>
+        </tr>
+    </table>
+</form>
+</div>
+{% endblock %}

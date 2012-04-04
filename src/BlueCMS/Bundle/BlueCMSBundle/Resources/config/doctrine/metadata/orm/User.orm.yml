@@ -1,0 +1,24 @@
+User:
+  type: entity
+  table: user
+  fields:
+    iduser:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: text
+      nullable: false
+    usertype:
+      type: text
+      nullable: false
+    password:
+      type: text
+      nullable: false
+    alias:
+      type: text
+      nullable: false
+  lifecycleCallbacks: {  }

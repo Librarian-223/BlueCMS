@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/blog/css/reset-mayer.css') }}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{{ asset('bundles/blog/css/style.css') }}" type="text/css" media="all" />
+        {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        {% block body %}
+            <div id="container">
+        <div id="header">
+            <div id="banner"></div>
+        </div>
+        
+        <div id="main">
+            <div id="bar">
+                <div id="form">
+                    <form action="controller" method="POST">
+                        <table>
+                            <tr>
+                                <td><label for="username">User: </label></td>
+                                <td><input type="text" name="username" size="15" maxlength="15" required /></td>
+                            </tr>
+                            <tr>
+                                <td><label for="username">Password: </label></td>
+                                <td><input type="password" name="userpassword" size="15" maxlength="15" required /></td>
+                            </tr>
+                            <tr>
+                                <td><input type="hidden" name="action" value="login" /></td>
+                                <td><input type="submit" value="Login" /></td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div id="archive">
+                    {% for entrada in entradas %}
+                        
+                        <a href="{{path('_welcome')}}archivo/{{ entrada.fecha |date("Y")}}">{{ entrada.fecha |date("Y")}}</a>
+                        <br />
+                    {% endfor %}
+                </div>
+                <a href="{{ path('BlogBlogBundle_adminpage')}}">Backend</a><br />
+                <a href="{{ path('BlogBlogBundle_homepage')}}">Home</a><br />
+                <a href="{{ path('BlogBlogBundle_contactopage')}}">Contacto</a><br />
+                <a href="{{ path('manage_entrada')}}">Gestion Entradas</a><br />
+                <a href="{{ path('manage_comentario')}}">Gestion Comentarios</a><br />
+            </div>
+            <div id="content">
+                {% block contenido %}
+                {% for entrada in entradas %}
+                <div id="entry"><div id="titulo"><a href="{{ path('_welcome') }}{{ entrada.fecha |date("Y")}}/{{ entrada.fecha |date("M")}}/entrada-{{entrada.titulo}}"><h1>{{entrada.titulo}}</h1></a></div>
+                <div id="texto">{{entrada.contenido}}
+                    <br /><br /><p><b>Fecha: </b>{{ entrada.fecha |date("d/M/Y")}}</p>
+                </div>
+                </div>
+                {% endfor %}
+                {% endblock %}
+            </div>
+            <div class="clean"></div>
+        </div>
+        <div id="footer"></div>
+        </div>
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
+
+

@@ -1,0 +1,43 @@
+BlogBlogBundle_homepage:
+    pattern:  /index
+    defaults: { _controller: BlogBlogBundle:Default:index }
+    
+BlogBlogBundle_adminpage:
+    pattern:  /admin
+    defaults: { _controller: BlogBlogBundle:Default:admin }
+    
+BlogBlogBundle_contactopage:
+    pattern:  /contacto
+    defaults: { _controller: BlogBlogBundle:Default:contacto }
+    
+BlogBlogBundle_enviarmailpage:
+    pattern:  /enviarmail
+    defaults: { _controller: BlogBlogBundle:Default:enviarmail }
+    
+BlogBlogBundle_nuevaentradapage:
+    pattern:  /nuevaentrada
+    defaults: { _controller: BlogBlogBundle:Default:nuevaentrada }
+    
+BlogBlogBundle_crearentradapage:
+    pattern:  /crearentrada
+    defaults: { _controller: BlogBlogBundle:Default:crearentrada }
+    
+BlogBlogBundle_entradapage:
+    pattern:  /{anio}/{mes}/entrada-{name}
+    defaults: { _controller: BlogBlogBundle:Default:entrada }
+    
+BlogBlogBundle_crearcomentariopage:
+    pattern:  /crearcomentario
+    defaults: { _controller: BlogBlogBundle:Default:crearcomentario }
+    
+BlogBlogBundle_archivoaniopage:
+    pattern:  /archivo/{anio}
+    defaults: { _controller: BlogBlogBundle:Default:archivoanio }
+    
+BlogBlogBundle_manage_entrada:
+    resource: "@BlogBlogBundle/Resources/config/routing/entrada.yml"
+    prefix:   /manage/entrada
+    
+BlogBlogBundle_manage_comentario:
+    resource: "@BlogBlogBundle/Resources/config/routing/comentario.yml"
+    prefix:   /manage/comentario

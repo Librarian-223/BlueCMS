@@ -1,0 +1,30 @@
+manage_entrada:
+    pattern:  /
+    defaults: { _controller: "BlogBlogBundle:Entrada:index" }
+
+manage_entrada_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BlogBlogBundle:Entrada:show" }
+
+manage_entrada_new:
+    pattern:  /new
+    defaults: { _controller: "BlogBlogBundle:Entrada:new" }
+
+manage_entrada_create:
+    pattern:  /create
+    defaults: { _controller: "BlogBlogBundle:Entrada:create" }
+    requirements: { _method: post }
+
+manage_entrada_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BlogBlogBundle:Entrada:edit" }
+
+manage_entrada_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BlogBlogBundle:Entrada:update" }
+    requirements: { _method: post }
+
+manage_entrada_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BlogBlogBundle:Entrada:delete" }
+    requirements: { _method: post }

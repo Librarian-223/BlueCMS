@@ -1,0 +1,26 @@
+Comment:
+  type: entity
+  table: comment
+  fields:
+    idcomment:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    content:
+      type: text
+      nullable: false
+    identry:
+      type: integer
+      unsigned: false
+      nullable: false
+    iduser:
+      type: integer
+      unsigned: false
+      nullable: false
+    created:
+      type: date
+      nullable: false
+  lifecycleCallbacks: {  }

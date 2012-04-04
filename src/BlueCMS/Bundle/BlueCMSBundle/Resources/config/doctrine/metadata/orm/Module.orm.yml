@@ -1,0 +1,32 @@
+Module:
+  type: entity
+  table: module
+  fields:
+    idmodule:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    name:
+      type: text
+      nullable: false
+    description:
+      type: text
+      nullable: false
+    code:
+      type: text
+      nullable: false
+    position:
+      type: text
+      nullable: false
+    activity:
+      type: integer
+      unsigned: false
+      nullable: false
+    order:
+      type: integer
+      unsigned: false
+      nullable: false
+  lifecycleCallbacks: {  }

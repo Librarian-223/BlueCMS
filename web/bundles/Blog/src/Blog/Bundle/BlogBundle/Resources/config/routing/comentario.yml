@@ -1,0 +1,30 @@
+manage_comentario:
+    pattern:  /
+    defaults: { _controller: "BlogBlogBundle:Comentario:index" }
+
+manage_comentario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BlogBlogBundle:Comentario:show" }
+
+manage_comentario_new:
+    pattern:  /new
+    defaults: { _controller: "BlogBlogBundle:Comentario:new" }
+
+manage_comentario_create:
+    pattern:  /create
+    defaults: { _controller: "BlogBlogBundle:Comentario:create" }
+    requirements: { _method: post }
+
+manage_comentario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BlogBlogBundle:Comentario:edit" }
+
+manage_comentario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BlogBlogBundle:Comentario:update" }
+    requirements: { _method: post }
+
+manage_comentario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BlogBlogBundle:Comentario:delete" }
+    requirements: { _method: post }

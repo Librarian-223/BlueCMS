@@ -1,0 +1,75 @@
+{% extends "::base.html.twig" %}
+
+{% block title "Administration" %}
+{% block stylesheets %}
+        <link href="{{asset('bundles/blog/css/reset-mayer.css') }}" rel="stylesheet" title="default" type="text/css" />
+	<link href="{{asset('bundles/blog/css/backend.css') }}" rel="stylesheet" title="default" type="text/css" />
+
+{% endblock %}
+{% block body %}
+             
+        <div id="container">
+            <div id="header">
+		<a id="btnpanel" href="admin"><h1>Kiwi: Panel de control</h1></a>
+		<a id="btnver" href="index">Ver Página</a>
+		<span id="welcomeuser">
+                   
+                    <a href="controller?action=exit">Exit</a>
+                </span>		
+            </div>
+            <div id="body">
+		<div id="title">
+                    	{% block nuevo %}
+                            <div id="btnnew">    
+                                <a href="nuevaentrada">
+                                    Nueva Entrada
+                                </a>
+                            </div>
+                        {% endblock %}
+			<h2>{% block titulo %}Nueva Entrada{% endblock %}</h2>
+                            
+		</div>
+		<div id="bar">
+                    <ul>
+			<li><a href="entries.jsp" id="firstmenu">Entries</a></li>
+			<li><a href="pages.jsp">Pages</a></li>
+			<li><a href="polls.jsp">Polls</a></li>	
+			<li><a href="forms.jsp">Forms</a></li>
+			<li><a href="users.jsp">Users</a></li>	
+			<li><a href="modules.jsp">Modules</a></li>	
+			<li><a href="templates.jsp">Templates</a></li>	
+			<li><a href="settings.jsp" id="lastmenu">Settings</a></li>						
+		</ul>				
+		</div>
+                    <div id="content">
+                        {% block content %}
+                	<form action="crearentrada" method="post"><fieldset><legend>Nueva Entrada</legend>   
+                            <table>
+                                <tr>
+                                    <td><label for="nombre">Titulo </label></td>
+                                    <td><input type="text" name="titulo" size="30" maxlength="80"></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Contenido : </label></td>
+                                    <td><textarea name="contenido" cols="40" rows="20"></textarea></td>
+                                </tr>
+                            </table>
+
+
+                            <label for="enviar">
+                            <input type="submit" name="enviar" value="Enviar datos"></label>
+                        </form>
+                        {% endblock %}
+                    </div>
+                    <div class="clean"></div>
+                </div>
+            
+            <div id="footer">
+			
+            </div>		
+	</div>
+    
+    
+{% endblock %}
+
+{% set code = code(_self) %}

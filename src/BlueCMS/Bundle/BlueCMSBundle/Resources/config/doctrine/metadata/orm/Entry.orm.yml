@@ -1,0 +1,25 @@
+Entry:
+  type: entity
+  table: entry
+  fields:
+    identry:
+      id: true
+      type: integer
+      unsigned: false
+      nullable: false
+      generator:
+        strategy: IDENTITY
+    title:
+      type: text
+      nullable: false
+    content:
+      type: text
+      nullable: false
+    created:
+      type: datetime
+      nullable: false
+    iduser:
+      type: integer
+      unsigned: false
+      nullable: false
+  lifecycleCallbacks: {  }
