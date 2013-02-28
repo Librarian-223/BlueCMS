@@ -5,3 +5,7 @@ BlueCMSBundle_homepage:
 BlueCMSBundle_homepage:
     pattern:  /index/{nombre}
     defaults: { _controller: BlueCMSBundle:Default:index }
+
+BlueCMSBundle_entry:
+    resource: "@BlueCMSBundle/Resources/config/routing/entry.yml"
+    prefix:   /entry

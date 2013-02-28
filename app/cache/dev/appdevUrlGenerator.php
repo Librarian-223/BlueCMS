@@ -34,6 +34,13 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_step' => true,
        '_configurator_final' => true,
        'BlueCMSBundle_homepage' => true,
+       'entry' => true,
+       'entry_show' => true,
+       'entry_new' => true,
+       'entry_create' => true,
+       'entry_edit' => true,
+       'entry_update' => true,
+       'entry_delete' => true,
     );
 
     /**
@@ -160,5 +167,40 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getBlueCMSBundle_homepageRouteInfo()
     {
         return array(array (  0 => 'nombre',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'nombre',  ),  1 =>   array (    0 => 'text',    1 => '/index',  ),));
+    }
+
+    private function getentryRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/entry/',  ),));
+    }
+
+    private function getentry_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/entry',  ),));
+    }
+
+    private function getentry_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/entry/new',  ),));
+    }
+
+    private function getentry_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/entry/create',  ),));
+    }
+
+    private function getentry_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/entry',  ),));
+    }
+
+    private function getentry_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/entry',  ),));
+    }
+
+    private function getentry_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/entry',  ),));
     }
 }

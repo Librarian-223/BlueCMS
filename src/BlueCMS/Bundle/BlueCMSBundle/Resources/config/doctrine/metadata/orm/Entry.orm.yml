@@ -2,7 +2,7 @@ Entry:
   type: entity
   table: entry
   fields:
-    identry:
+    id:
       id: true
       type: integer
       unsigned: false

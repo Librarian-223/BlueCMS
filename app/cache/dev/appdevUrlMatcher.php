@@ -148,6 +148,62 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'BlueCMSBundle_homepage'));
         }
 
+        if (0 === strpos($pathinfo, '/entry')) {
+            // entry
+            if (rtrim($pathinfo, '/') === '/entry') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'entry');
+                }
+                return array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::indexAction',  '_route' => 'entry',);
+            }
+
+            // entry_show
+            if (preg_match('#^/entry/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::showAction',)), array('_route' => 'entry_show'));
+            }
+
+            // entry_new
+            if ($pathinfo === '/entry/new') {
+                return array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::newAction',  '_route' => 'entry_new',);
+            }
+
+            // entry_create
+            if ($pathinfo === '/entry/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_entry_create;
+                }
+                return array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::createAction',  '_route' => 'entry_create',);
+            }
+            not_entry_create:
+
+            // entry_edit
+            if (preg_match('#^/entry/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::editAction',)), array('_route' => 'entry_edit'));
+            }
+
+            // entry_update
+            if (preg_match('#^/entry/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_entry_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::updateAction',)), array('_route' => 'entry_update'));
+            }
+            not_entry_update:
+
+            // entry_delete
+            if (preg_match('#^/entry/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_entry_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\EntryController::deleteAction',)), array('_route' => 'entry_delete'));
+            }
+            not_entry_delete:
+
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

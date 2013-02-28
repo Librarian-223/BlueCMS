@@ -13,13 +13,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Entry
 {
     /**
-     * @var integer $identry
+     * @var integer $id
      *
-     * @ORM\Column(name="identry", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $identry;
+    private $id;
 
     /**
      * @var text $title
@@ -52,13 +52,13 @@ class Entry
 
 
     /**
-     * Get identry
+     * Get id
      *
      * @return integer 
      */
-    public function getIdentry()
+    public function getId()
     {
-        return $this->identry;
+        return $this->id;
     }
 
     /**
