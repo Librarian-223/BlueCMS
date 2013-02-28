@@ -1,5 +1,5 @@
 body{
-	background-color: #303030;
+	background-color: #DCDDDD;
 	/*background-image: url("../images/blancogradiente.png");	*/
 	background-repeat: repeat-x;
 	font-family: sans-serif;
@@ -12,15 +12,18 @@ body{
 #header{
 	border:0px solid brown;
 	width: 100%;
-	height: 216px;
+/*	height: 216px;*/
 	color: #FFF;
+        text-align: center;
+        background-image: url('../images/1411.png');
 	}
 	#header #banner{
 	border:0px solid brown;
-	border-bottom:10px solid #303030;
 	background-image: url('../images/banner.png');
+	background-repeat: no-repeat;
+	background-position: 70% 50%;
 	width: 960px;
-	height: 208px;
+	height: 200px;
 	margin: 0 auto;
 	}
 #main{
@@ -30,26 +33,26 @@ body{
 	margin: 0 auto;
 	background-color: #DCDDDD;
 	}
-	#main #bar{
-	border:3px solid #013;
-        border-radius:10px;
-        background-color: #a0a0a0;
-	float: right;
+	#main #nav{
+	border-right:1px solid silver;
+	float: left;
 	width: 240px;
 	height: 700px;
-	margin: 5px;
-        padding:5px;
+	margin:0 auto;
 	}
+        #main #nav #navmodule{
+            margin:10px;
+        }
 	#main #content{
 	border:0px solid brown;
 	float: left;
-	width: 685px;
+	width: 714px;
 
 
 	}
 		#content #entry{
-		border:2px solid black;	
-		width: 620px;
+		border:1px solid grey;	
+		width: 650px;
 		background-color: #FFF;
 		-moz-border-radius: 5px;
 		border-radius: 5px;
@@ -59,8 +62,13 @@ body{
 		}
 			#content #entry #entrytitle{
 			color: brown;
+                        text-decoration: none;
 			margin-bottom: 15px;
+                        text-decoration: wavy;
 			}
+                        #content #entry #entrytitle a h1{
+                        text-decoration: wavy;
+                        }
 			#content #entry #entrycontent{
 			font-size: 12px;
 			margin-bottom: 20px;
@@ -85,6 +93,7 @@ body{
 					}
 				#content #entry #entrycontent a{
 					color: brown;
+                                        text-decoration: wavy;
 					}
 			#content #entry #entrycreated{
 			float: left;
@@ -96,49 +105,12 @@ body{
 			width: 200px;
 			font-size: 12px;
 			}
-                #content #comment{
-                border:2px solid silver;	
-		width: 620px;
-		background-color: #a0a0a0;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
-		padding: 20px;
-		margin: 10px auto;
-		text-align: left;  
-                font-size: 12px;
-                }
-                #content #formcomment{
-                    font-size: 12px;
-                    border:2px solid grey;
-                    border-radius: 10px;
-                    padding: 5px;
-                    width: 500px;
-                    margin: 10px auto;
-                    text-align: left;
-                }
-                #content #formcomment td{
-                    padding: 5px;
-                }
-                #content form table{
-                    font-size: 12px;
-                    border:2px solid grey;
-                    border-radius: 10px;
-                    padding: 5px;
-                    width: 500px;
-                    margin: 10px auto;
-                    text-align: left;
-                }
-                #content form table td{
-                   padding: 5px; 
-                    
-                }
-                
+		
 #footer{
-	border:0px solid brown;
-	width: 960px;
-        margin:0 auto;
+	border-top:1px solid grey;
+	width: 100%;
 	height: 150px;
-	background-image: url('../images/1411.png');
+	background-color:#202020;
 	}
 	
 	.clean{clear: both;}

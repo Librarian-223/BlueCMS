@@ -1,1 +1,52 @@
-Hello {{ name }}!
+{% extends "::base.html.twig" %}
+
+{% block title "Avisa2" %}
+
+{% block stylesheets %}
+
+    <link href="{{asset('bundles/BlueCMS/css/reset-mayer.css') }}" rel="stylesheet" title="default" type="text/css" />
+	<link href="{{asset('bundles/BlueCMS/css/style.css') }}" rel="stylesheet" title="default" type="text/css" />
+
+{% endblock %}
+
+{% block body %}
+
+	{% block contenido %}
+
+		<div id="container">
+
+	        <div id="header">
+	            <div id="banner"></div>
+	        </div>
+
+	        <div id="main">
+            	<div id="nav"></div>
+
+            	<div id="content">
+
+					Hello {{ name }}!
+
+					{% for entrada in entradas %}
+
+						<div id="entry">
+							<div id="titulo">
+								<h1>{{entrada.title}}</h1>
+							</div>
+				    		<div id="texto">{{entrada.content}}</div>
+						</div>
+
+				    {% endfor %}
+
+				</div>
+
+			</div>
+
+		</div>
+
+	{% endblock %}
+
+{% endblock %}
+        
+
+
+{% set code = code(_self) %}
