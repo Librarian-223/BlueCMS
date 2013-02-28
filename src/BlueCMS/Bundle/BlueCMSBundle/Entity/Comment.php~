@@ -1,0 +1,53 @@
+<?php
+
+namespace BlueCMS\Bundle\BlueCMSBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BlueCMS\Bundle\BlueCMSBundle\Entity\Comment
+ *
+ * @ORM\Table(name="comment")
+ * @ORM\Entity
+ */
+class Comment
+{
+    /**
+     * @var integer $idcomment
+     *
+     * @ORM\Column(name="idcomment", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idcomment;
+
+    /**
+     * @var text $content
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var integer $identry
+     *
+     * @ORM\Column(name="identry", type="integer", nullable=false)
+     */
+    private $identry;
+
+    /**
+     * @var integer $iduser
+     *
+     * @ORM\Column(name="iduser", type="integer", nullable=false)
+     */
+    private $iduser;
+
+    /**
+     * @var date $created
+     *
+     * @ORM\Column(name="created", type="date", nullable=false)
+     */
+    private $created;
+
+
+}

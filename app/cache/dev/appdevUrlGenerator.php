@@ -159,6 +159,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getBlueCMSBundle_homepageRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\DefaultController::gestorAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/gestor',  ),));
+        return array(array (  0 => 'nombre',), array (  '_controller' => 'BlueCMS\\Bundle\\BlueCMSBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'nombre',  ),  1 =>   array (    0 => 'text',    1 => '/index',  ),));
     }
 }

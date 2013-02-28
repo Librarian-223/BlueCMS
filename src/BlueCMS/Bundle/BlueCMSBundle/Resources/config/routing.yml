@@ -1,3 +1,7 @@
 BlueCMSBundle_homepage:
     pattern:  /gestor
     defaults: { _controller: BlueCMSBundle:Default:gestor }
+
+BlueCMSBundle_homepage:
+    pattern:  /index/{nombre}
+    defaults: { _controller: BlueCMSBundle:Default:index }

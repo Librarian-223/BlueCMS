@@ -1,0 +1,53 @@
+<?php
+
+namespace BlueCMS\Bundle\BlueCMSBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BlueCMS\Bundle\BlueCMSBundle\Entity\Entry
+ *
+ * @ORM\Table(name="entry")
+ * @ORM\Entity
+ */
+class Entry
+{
+    /**
+     * @var integer $identry
+     *
+     * @ORM\Column(name="identry", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $identry;
+
+    /**
+     * @var text $title
+     *
+     * @ORM\Column(name="title", type="text", nullable=false)
+     */
+    private $title;
+
+    /**
+     * @var text $content
+     *
+     * @ORM\Column(name="content", type="text", nullable=false)
+     */
+    private $content;
+
+    /**
+     * @var datetime $created
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=false)
+     */
+    private $created;
+
+    /**
+     * @var integer $iduser
+     *
+     * @ORM\Column(name="iduser", type="integer", nullable=false)
+     */
+    private $iduser;
+
+
+}

@@ -1,0 +1,67 @@
+<?php
+
+namespace BlueCMS\Bundle\BlueCMSBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BlueCMS\Bundle\BlueCMSBundle\Entity\Module
+ *
+ * @ORM\Table(name="module")
+ * @ORM\Entity
+ */
+class Module
+{
+    /**
+     * @var integer $idmodule
+     *
+     * @ORM\Column(name="idmodule", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $idmodule;
+
+    /**
+     * @var text $name
+     *
+     * @ORM\Column(name="name", type="text", nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var text $description
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var text $code
+     *
+     * @ORM\Column(name="code", type="text", nullable=false)
+     */
+    private $code;
+
+    /**
+     * @var text $position
+     *
+     * @ORM\Column(name="position", type="text", nullable=false)
+     */
+    private $position;
+
+    /**
+     * @var integer $activity
+     *
+     * @ORM\Column(name="activity", type="integer", nullable=false)
+     */
+    private $activity;
+
+    /**
+     * @var integer $order
+     *
+     * @ORM\Column(name="order", type="integer", nullable=false)
+     */
+    private $order;
+
+
+}
